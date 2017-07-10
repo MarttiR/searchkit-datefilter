@@ -1,0 +1,31 @@
+.sk-date-box {
+  display: flex;
+  margin: 0 0 10px;
+  font-size:14px;
+
+  &__label,
+  &__value, {
+    &:focus {
+      outline:0;
+    }
+  }
+
+  &__label {
+    color: #666;
+    font-weight: 300;
+    align-self: center;
+  }
+
+  &__value {
+    line-height: 1;
+    background: #f4f4f4;
+    color: #666;
+    border-radius: 8px;
+    padding: 0.5em;
+    min-height: 2em;
+  }
+}
+
+.sk-calendar-picker {
+  z-index: 1;
+}

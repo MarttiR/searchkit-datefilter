@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "jsx": "react"
+  },
+  "files": [
+    "./src/index.ts",
+    "./theming/index.ts"
+  ],
+  "filesGlob": [
+    "!./node_modules/**/*"
+  ],
+  "exclude": [
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}
