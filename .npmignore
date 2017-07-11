@@ -1,5 +1,5 @@
 node_modules
 npm-debug.log
 tsconfig.json
-src
-demo
+/src
+/demo
