@@ -7,7 +7,7 @@ This Searchkit filter lets users filter start-end date ranges based on a chosen 
 
 See demo directory for a working example.
 
-<img src="./searchkit-datefilter-screenshot.png" width="100%" height="auto" />
+<img src="./searchkit-datefilter-screenshot.png" />
 
 ## Example component
 
