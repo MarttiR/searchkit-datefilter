@@ -9,7 +9,11 @@ See demo directory for a working example.
 
 <img src="./searchkit-datefilter-screenshot.png" />
 
-## Example component
+---
+
+The Searchkit components needed for date range filtering were originally published [here](https://github.com/City-of-Turku/kada-elastic-events) under the MIT license.
+
+## Example
 
 ```jsx
 
@@ -17,7 +21,6 @@ import { SearchkitComponent } from "searchkit";
 import { DateRangeFilter, DateRangeCalendar } from "searchkit-datefilter"
 
 class App extends SearchkitComponent {
-
   render(){
     <div>
      <DateRangeFilter
