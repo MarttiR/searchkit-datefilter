@@ -13,6 +13,12 @@ See demo directory for a working example.
 
 The Searchkit components needed for date range filtering were originally published [here](https://github.com/City-of-Turku/kada-elastic-events) under the MIT license.
 
+## Install
+
+```
+npm install --save-dev searchkit-datefilter
+```
+
 ## Example
 
 ```jsx
