@@ -29,7 +29,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/tsc; ./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/tsc; ./node_modules/.bin/webpack-cli",
     "build:watch": "./node_modules/.bin/tsc -w",
     "demo": "node demo/start.js"
   },
@@ -60,7 +60,7 @@
     "css-loader": "^1.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "imports-loader": "^0.8.0",
@@ -80,6 +80,7 @@
     "ts-node": "^7.0.1",
     "typescript": "3.0.1",
     "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
     "webpack-config": "^7.5.0",
     "webpack-dev-middleware": "^3.2.0",
     "webpack-hot-middleware": "^2.22.3"
