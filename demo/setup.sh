@@ -3,6 +3,8 @@
 # Bail on errors.
 set -e
 
+SCRIPT_DIR=$(dirname "$(readlink -f "$BASH_SOURCE")")
+
 : ${CONTAINER_NAME:="datefilter_demo_es"}
 : ${ES_CONFIG:="/usr/share/elasticsearch/config/elasticsearch.yml"}
 : ${ES_HOST:="localhost"}
@@ -14,7 +16,7 @@ docker run -p $ES_PORT:9200 -d --name $CONTAINER_NAME elasticsearch:2.4.4
 
 # Write ES settings.
 echo "Writing ES config to $ES_CONFIG."
-docker exec -i $CONTAINER_NAME dd of=$ES_CONFIG < ./data/elasticsearch.yml
+docker exec -i $CONTAINER_NAME dd of=$ES_CONFIG < $SCRIPT_DIR/data/elasticsearch.yml
 
 # Restart container.
 echo "Restarting container."
@@ -35,10 +37,10 @@ done
 
 # Create mapping for data. Note the trailing slash.
 printf "\n\nCreating mapping."
-curl -s -S -o /dev/null -XPUT "http://$ES_HOST:$ES_PORT/events/" --data-binary @data/calendar-mappings.json
+curl -s -S -o /dev/null -XPUT "http://$ES_HOST:$ES_PORT/events/" --data-binary @$SCRIPT_DIR/data/calendar-mappings.json
 
 # Insert data.
 printf "\n\nInserting data."
-curl -s -S -o /dev/null -XPOST "http://$ES_HOST:$ES_PORT/_bulk" --data-binary @data/calendar-data.ndjson
+curl -s -S -o /dev/null -XPOST "http://$ES_HOST:$ES_PORT/_bulk" --data-binary @$SCRIPT_DIR/data/calendar-data.ndjson
 
 printf "\n\nElasticsearch setup done, next: 'npm run demo'.\n\n"
