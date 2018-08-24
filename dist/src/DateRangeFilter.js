@@ -1,8 +1,11 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -11,12 +14,13 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+var PropTypes = require("prop-types");
 var moment = require("moment");
 var searchkit_1 = require("searchkit");
 var DateRangeAccessor_1 = require("./DateRangeAccessor");
 var lodash_1 = require("lodash");
 // For testing without a calendar component. Accepts date math.
-var DateRangeFilterInput = (function (_super) {
+var DateRangeFilterInput = /** @class */ (function (_super) {
     __extends(DateRangeFilterInput, _super);
     function DateRangeFilterInput() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -40,7 +44,7 @@ var DateRangeFilterInput = (function (_super) {
     return DateRangeFilterInput;
 }(searchkit_1.SearchkitComponent));
 exports.DateRangeFilterInput = DateRangeFilterInput;
-var DateRangeFilter = (function (_super) {
+var DateRangeFilter = /** @class */ (function (_super) {
     __extends(DateRangeFilter, _super);
     function DateRangeFilter(props) {
         var _this = _super.call(this, props) || this;
@@ -111,26 +115,26 @@ var DateRangeFilter = (function (_super) {
             rangeFormatter: rangeFormatter
         });
     };
+    DateRangeFilter.propTypes = lodash_1.defaults({
+        fromDate: PropTypes.object,
+        toDate: PropTypes.object,
+        fromDateField: PropTypes.string.isRequired,
+        toDateField: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        containerComponent: searchkit_1.RenderComponentPropType,
+        calendarComponent: searchkit_1.RenderComponentPropType,
+        rangeFormatter: PropTypes.func,
+        fieldOptions: PropTypes.shape({
+            type: PropTypes.oneOf(["embedded", "nested", "children"]).isRequired,
+            options: PropTypes.object
+        }),
+    }, searchkit_1.SearchkitComponent.propTypes);
+    DateRangeFilter.defaultProps = {
+        containerComponent: searchkit_1.Panel,
+        rangeFormatter: function (v) { return moment(parseInt("" + v)).format('D.M.YYYY'); }
+    };
     return DateRangeFilter;
 }(searchkit_1.SearchkitComponent));
-DateRangeFilter.propTypes = lodash_1.defaults({
-    fromDate: React.PropTypes.object,
-    toDate: React.PropTypes.object,
-    fromDateField: React.PropTypes.string.isRequired,
-    toDateField: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string.isRequired,
-    id: React.PropTypes.string.isRequired,
-    containerComponent: searchkit_1.RenderComponentPropType,
-    calendarComponent: searchkit_1.RenderComponentPropType,
-    rangeFormatter: React.PropTypes.func,
-    fieldOptions: React.PropTypes.shape({
-        type: React.PropTypes.oneOf(["embedded", "nested", "children"]).isRequired,
-        options: React.PropTypes.object
-    }),
-}, searchkit_1.SearchkitComponent.propTypes);
-DateRangeFilter.defaultProps = {
-    containerComponent: searchkit_1.Panel,
-    rangeFormatter: function (v) { return moment(parseInt("" + v)).format('D.M.YYYY'); }
-};
 exports.DateRangeFilter = DateRangeFilter;
 //# sourceMappingURL=DateRangeFilter.js.map

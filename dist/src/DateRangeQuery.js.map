@@ -1,1 +1,1 @@
-{"version":3,"file":"DateRangeQuery.js","sourceRoot":"","sources":["../../src/DateRangeQuery.ts"],"names":[],"mappings":";;AAUA,wBAA+B,GAAG,EAAE,OAA6B;IAC/D,IAAI,KAAK,GAAG;QACV,KAAK;YACH,GAAC,GAAG,IAAE,OAAO;eACd;KACF,CAAA;IAED,MAAM,CAAC,KAAK,CAAA;;AACd,CAAC;AARD,wCAQC"}
+{"version":3,"file":"DateRangeQuery.js","sourceRoot":"","sources":["../../src/DateRangeQuery.ts"],"names":[],"mappings":";;AAUA,SAAgB,cAAc,CAAC,GAAG,EAAE,OAA6B;;IAC/D,IAAI,KAAK,GAAG;QACV,KAAK;YACH,GAAC,GAAG,IAAE,OAAO;eACd;KACF,CAAA;IAED,OAAO,KAAK,CAAA;AACd,CAAC;AARD,wCAQC"}

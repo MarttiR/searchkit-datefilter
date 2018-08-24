@@ -1,8 +1,11 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -14,7 +17,7 @@ var moment = require("moment");
 var lodash_1 = require("lodash");
 var searchkit_1 = require("searchkit");
 var DateRangeQuery_1 = require("./DateRangeQuery");
-var DateRangeAccessor = (function (_super) {
+var DateRangeAccessor = /** @class */ (function (_super) {
     __extends(DateRangeAccessor, _super);
     function DateRangeAccessor(key, options) {
         var _this = _super.call(this, key, options.id) || this;
@@ -47,6 +50,7 @@ var DateRangeAccessor = (function (_super) {
         }
     };
     DateRangeAccessor.prototype.getQueryObject = function () {
+        var _a;
         var val = this.state.getValue();
         var fromDate = val.fromDate && +val.fromDate;
         var toDate = val.toDate && +val.toDate;
@@ -54,7 +58,6 @@ var DateRangeAccessor = (function (_super) {
             _a[this.urlKey + '_from'] = fromDate,
             _a[this.urlKey + '_to'] = toDate,
             _a) : {};
-        var _a;
     };
     DateRangeAccessor.prototype.buildSharedQuery = function (query) {
         if (this.state.hasValue()) {

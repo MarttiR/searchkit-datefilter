@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 
 module.exports = {
+  mode: 'production',
   entry: {
     "bundle":['./src/index.ts', './theming/index.ts']
   },
@@ -13,35 +14,12 @@ module.exports = {
     library: 'searchkit-datefilter',
     libraryTarget: 'umd',
     publicPath: '',
-    css: 'theme.css'
   },
   resolve: {
-    extensions: ["", ".js", ".ts", ".tsx", ".webpack.js", ".web.js", ".scss"],
-    fallback: path.join(__dirname, "node_modules")
-  },
-  postcss: function () {
-    return [autoprefixer]
+    extensions: [".js", ".ts", ".tsx", ".webpack.js", ".web.js", ".scss"],
   },
   plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new ExtractTextPlugin("theme.css", {allChunks:true}),
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: {
-        except: ['require', 'export', '$super']
-      },
-      compress: {
-        warnings: false,
-        sequences: true,
-        dead_code: true,
-        conditionals: true,
-        booleans: true,
-        unused: true,
-        if_return: true,
-        join_vars: true,
-        drop_console: true
-      }
-    })
+    new ExtractTextPlugin("theme.css", { allChunks: true })
   ],
   externals: [
     'react',
@@ -50,20 +28,33 @@ module.exports = {
     'lodash',
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.tsx?$/,
-        loaders: ['ts'],
+        use: ['ts-loader'],
         include: [path.join(__dirname, 'src'),path.join(__dirname, 'theming')]
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(require.resolve("style-loader"),require.resolve("css-loader")+"!"+require.resolve("postcss-loader")+"!"+require.resolve("sass-loader")),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            'postcss-loader',
+            'sass-loader',
+          ]
+        }),
         include: path.join(__dirname, 'theming')
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract(require.resolve("style-loader"),require.resolve("css-loader"))
+        use: ExtractTextPlugin.extract( {
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            'postcss-loader',
+          ]
+        }),
       }
     ]
   }
