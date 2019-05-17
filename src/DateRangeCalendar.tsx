@@ -142,8 +142,8 @@ export class DateRangeCalendar extends SearchkitComponent<any, any> {
     const state = this.state;
     const { fromDate, toDate, fromDateValue, toDateValue } = this.props
 
-    const fromLabel = "From";
-    const toLabel = "To";
+    const fromLabel = this.props.formLabel || "Form";
+    const toLabel = this.props.toLabel || "To";
 
     return (
       <div>
