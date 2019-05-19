@@ -98,11 +98,13 @@ var DateRangeFilter = /** @class */ (function (_super) {
         return searchkit_1.renderComponent(containerComponent, {
             title: title,
             className: id ? "filter--" + id : undefined,
-            disabled: this.accessor.isDisabled()
+            disabled: false
         }, this.renderCalendarComponent(this.getCalendarComponent()));
     };
     DateRangeFilter.prototype.renderCalendarComponent = function (component) {
         var _a = this.props, fromDate = _a.fromDate, toDate = _a.toDate, rangeFormatter = _a.rangeFormatter;
+        if (!this.accessor)
+            return;
         var state = this.accessor.state.getValue();
         return searchkit_1.renderComponent(component, {
             fromDate: state.fromDate || fromDate,

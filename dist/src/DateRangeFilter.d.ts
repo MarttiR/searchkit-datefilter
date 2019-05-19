@@ -42,6 +42,6 @@ export declare class DateRangeFilter extends SearchkitComponent<DateRangeFilterP
     calendarUpdate: (newValues: any) => void;
     calendarUpdateAndSearch: (newValues: any) => void;
     getCalendarComponent(): any;
-    render(): React.ReactElement<any>;
-    renderCalendarComponent(component: RenderComponentType<any>): React.ReactElement<any>;
+    render(): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)>) | (new (props: any) => React.Component<any, any, any>)>;
+    renderCalendarComponent(component: RenderComponentType<any>): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)>) | (new (props: any) => React.Component<any, any, any>)>;
 }

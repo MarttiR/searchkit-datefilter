@@ -119,8 +119,8 @@ var DateRangeCalendar = /** @class */ (function (_super) {
     DateRangeCalendar.prototype.render = function () {
         var state = this.state;
         var _a = this.props, fromDate = _a.fromDate, toDate = _a.toDate, fromDateValue = _a.fromDateValue, toDateValue = _a.toDateValue;
-        var fromLabel = "From";
-        var toLabel = "To";
+        var fromLabel = this.props.formLabel || "Form";
+        var toLabel = this.props.toLabel || "To";
         return (React.createElement("div", null,
             React.createElement(Picker, { onOpenChange: this.onStartOpenChange, open: this.state.startOpen, type: "start", showValue: fromDateValue, value: [fromDate, toDate], onChange: this.onStartChange, dateInputPlaceholder: fromLabel }),
             React.createElement(Picker, { onOpenChange: this.onEndOpenChange, open: this.state.endOpen, type: "end", showValue: toDateValue, disabledDate: this.disabledStartDate, value: [fromDate, toDate], onChange: this.onEndChange, dateInputPlaceholder: toLabel })));
