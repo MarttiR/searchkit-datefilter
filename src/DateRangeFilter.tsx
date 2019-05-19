@@ -164,12 +164,13 @@ export class DateRangeFilter extends SearchkitComponent<DateRangeFilterProps, an
     return renderComponent(containerComponent, {
       title,
       className: id ? `filter--${id}` : undefined,
-      disabled: this.accessor.isDisabled()
+      disabled: false
     }, this.renderCalendarComponent(this.getCalendarComponent()))
   }
 
   renderCalendarComponent(component: RenderComponentType<any>) {
     const { fromDate, toDate, rangeFormatter } = this.props
+    if (!this.accessor) return
     const state:{ fromDate?:string, toDate?:string } = this.accessor.state.getValue()
 
     return renderComponent(component, {
