@@ -78,7 +78,7 @@ class App extends React.Component<any, any> {
                   title="Date range"
                   fromDateField="event_date.from"
                   toDateField="event_date.to"
-                  calendarComponent={DateRangeCalendar}
+                  calendarComponent={<DateRangeCalendar formLabel="From" toLabel="To"/>}
                   fieldOptions={{
                     type: 'embedded',
                     options: {
