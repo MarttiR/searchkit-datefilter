@@ -17,6 +17,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".ts", ".tsx", ".webpack.js", ".web.js", ".scss"],
+    alias: {
+      'searchkit': path.resolve(path.join(process.cwd(), 'node_modules', 'searchkit'))
+    }
   },
   plugins: [
     new ExtractTextPlugin("theme.css", { allChunks: true })
@@ -24,7 +27,6 @@ module.exports = {
   externals: [
     'react',
     'react-dom',
-    'searchkit',
     'lodash',
   ],
   module: {

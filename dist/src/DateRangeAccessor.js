@@ -63,7 +63,8 @@ var DateRangeAccessor = /** @class */ (function (_super) {
         if (this.state.hasValue()) {
             var val = this.state.getValue();
             var fromDateRangeFilter = this.fieldContext.wrapFilter(DateRangeQuery_1.DateRangeQuery(this.options.fromDateField, {
-                lte: +val.toDate
+                lte: +val.toDate,
+                gte: +val.fromDate
             }));
             var toDateRangeFilter = this.fieldContext.wrapFilter(DateRangeQuery_1.DateRangeQuery(this.options.toDateField, {
                 gte: +val.fromDate
@@ -81,7 +82,6 @@ var DateRangeAccessor = /** @class */ (function (_super) {
             };
             return query
                 .addFilter(this.key + '_to', fromDateRangeFilter)
-                .addFilter(this.key + '_from', toDateRangeFilter)
                 .addSelectedFilter(selectedFilter);
         }
         return query;
