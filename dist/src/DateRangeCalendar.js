@@ -32,7 +32,7 @@ var Picker = /** @class */ (function (_super) {
         var _this = this;
         var props = this.props;
         var showValue = props.showValue;
-        var calendar = (React.createElement(RangeCalendar, { type: this.props.type, locale: enUS, format: format, onChange: props.onChange, disabledDate: props.disabledDate, showToday: true, showOk: false, showClear: false }));
+        var calendar = (React.createElement(RangeCalendar, { type: this.props.type, locale: enUS, format: format, onChange: props.onChange, disabledDate: props.disabledDate, showToday: false, showOk: false, showClear: false }));
         return (React.createElement(DatePicker, { prefixCls: "sk-calendar-picker", open: this.props.open, onOpenChange: this.props.onOpenChange, calendar: calendar, value: props.value, dateFormat: format, align: {
                 points: ['bl', 'tl']
             } }, function () { return (React.createElement("div", { className: "sk-date-box" },

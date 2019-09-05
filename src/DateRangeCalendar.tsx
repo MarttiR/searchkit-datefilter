@@ -26,7 +26,7 @@ export class Picker extends SearchkitComponent<any, any> {
         format={format}
         onChange={props.onChange}
         disabledDate={props.disabledDate}
-        showToday={true}
+        showToday={false}
         showOk={false}
         showClear={false}
       />);
