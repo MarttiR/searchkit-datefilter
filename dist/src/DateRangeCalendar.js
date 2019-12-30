@@ -22,7 +22,7 @@ var RangeCalendar = require('rc-calendar/lib/RangeCalendar');
 var enUS = require('rc-calendar').enUS;
 var DatePicker = require('rc-calendar/lib/Picker');
 var format = 'dddd D. MMMM YYYY';
-var fullFormat = 'ddd D.M.Y';
+var fullFormat = 'ddd DD.MM.Y';
 var Picker = /** @class */ (function (_super) {
     __extends(Picker, _super);
     function Picker() {
