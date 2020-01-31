@@ -64,10 +64,13 @@ var DateRangeAccessor = /** @class */ (function (_super) {
             var val = this.state.getValue();
             var fromDateRangeFilter = this.fieldContext.wrapFilter(DateRangeQuery_1.DateRangeQuery(this.options.fromDateField, {
                 lte: +val.toDate,
-                gte: +val.fromDate
+                gte: +val.fromDate,
+                relation: "CONTAINS"
             }));
             var toDateRangeFilter = this.fieldContext.wrapFilter(DateRangeQuery_1.DateRangeQuery(this.options.toDateField, {
-                gte: +val.fromDate
+                lte: +val.toDate,
+                gte: +val.fromDate,
+                relation: "CONTAINS"
             }));
             var fromVal = this.rangeFormatter(val.fromDate);
             var toVal = this.rangeFormatter(val.toDate);
@@ -82,6 +85,7 @@ var DateRangeAccessor = /** @class */ (function (_super) {
             };
             return query
                 .addFilter(this.key + '_to', fromDateRangeFilter)
+                .addFilter(this.key + '_from', toDateRangeFilter)
                 .addSelectedFilter(selectedFilter);
         }
         return query;
@@ -104,10 +108,14 @@ var DateRangeAccessor = /** @class */ (function (_super) {
             var filters = searchkit_1.BoolMust([
                 otherFilters,
                 this.fieldContext.wrapFilter(DateRangeQuery_1.DateRangeQuery(this.options.fromDateField, {
-                    lte: +val.toDate
+                    lte: +val.toDate,
+                    gte: +val.fromDate,
+                    relation: "CONTAINS"
                 })),
                 this.fieldContext.wrapFilter(DateRangeQuery_1.DateRangeQuery(this.options.toDateField, {
-                    gte: +val.fromDate
+                    lte: +val.toDate,
+                    gte: +val.fromDate,
+                    relation: "CONTAINS"
                 }))
             ]);
             query = query.setAggs(searchkit_1.FilterBucket(this.key, filters));

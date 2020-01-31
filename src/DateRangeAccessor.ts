@@ -80,10 +80,13 @@ export class DateRangeAccessor extends FilterBasedAccessor<ObjectState> {
       let val:any = this.state.getValue()
       let fromDateRangeFilter = this.fieldContext.wrapFilter(DateRangeQuery(this.options.fromDateField,{
         lte: +val.toDate,
-        gte: +val.fromDate
+        gte: +val.fromDate,
+        relation: "CONTAINS"
       }))
       let toDateRangeFilter = this.fieldContext.wrapFilter(DateRangeQuery(this.options.toDateField,{
-        gte: +val.fromDate
+        lte: +val.toDate,
+        gte: +val.fromDate,
+        relation : "CONTAINS"
       }))
       const fromVal = this.rangeFormatter(val.fromDate);
       const toVal = this.rangeFormatter(val.toDate);
@@ -99,6 +102,7 @@ export class DateRangeAccessor extends FilterBasedAccessor<ObjectState> {
 
       return query
         .addFilter(this.key+'_to', fromDateRangeFilter)
+        .addFilter(this.key+'_from', toDateRangeFilter)
         .addSelectedFilter(selectedFilter)
     }
 
@@ -125,12 +129,16 @@ export class DateRangeAccessor extends FilterBasedAccessor<ObjectState> {
         otherFilters,
         this.fieldContext.wrapFilter(
           DateRangeQuery(this.options.fromDateField, {
-            lte: +val.toDate
+            lte: +val.toDate,
+            gte: +val.fromDate,
+            relation : "CONTAINS"
           })
         ),
         this.fieldContext.wrapFilter(
           DateRangeQuery(this.options.toDateField, {
-            gte: +val.fromDate
+            lte: +val.toDate,
+            gte: +val.fromDate,
+            relation : "CONTAINS"
           })
         )
       ])

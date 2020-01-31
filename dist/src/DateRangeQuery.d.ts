@@ -4,6 +4,7 @@ export interface DateRangeQueryOptions {
     gt?: number | string;
     gte?: number | string;
     boost?: number;
+    relation: string;
     format?: string;
     time_zone?: string;
 }

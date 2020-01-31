@@ -1,3 +1,4 @@
+.sk-date-box{display:-webkit-box;display:flex;margin:0 0 10px;font-size:14px}.sk-date-box__label:focus,.sk-date-box__value:focus{outline:0}.sk-date-box__label{color:#666;font-weight:300;align-self:center}.sk-date-box__value{line-height:1;background:#f4f4f4;color:#666;border-radius:8px;padding:0.5em;min-height:2em}.sk-calendar-picker{z-index:1}
 .rc-calendar {
   box-sizing: border-box;
 }
@@ -93,6 +94,7 @@
   display: inline-block;
   line-height: 1;
   width: 20px;
+  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 .rc-calendar-clear-btn:hover:after {
@@ -677,8 +679,11 @@
 }
 .rc-calendar-month-panel > div {
   height: 100%;
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
 }
 .rc-calendar-month-panel-hidden {
   display: none;
@@ -738,7 +743,8 @@
   right: 0;
 }
 .rc-calendar-month-panel-body {
-  flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
   padding: 9px 10px 10px;
 }
 .rc-calendar-month-panel-footer {
@@ -801,8 +807,11 @@
 }
 .rc-calendar-year-panel > div {
   height: 100%;
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
 }
 .rc-calendar-year-panel-hidden {
   display: none;
@@ -862,7 +871,8 @@
   right: 0;
 }
 .rc-calendar-year-panel-body {
-  flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
   padding: 9px 10px 10px;
 }
 .rc-calendar-year-panel-footer {
@@ -919,8 +929,11 @@
   z-index: 10;
   position: absolute;
   outline: none;
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
 }
 .rc-calendar-decade-panel-hidden {
   display: none;
@@ -974,7 +987,8 @@
   right: 0;
 }
 .rc-calendar-decade-panel-body {
-  flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
   padding: 9px 10px 10px;
 }
 .rc-calendar-decade-panel-footer {
@@ -1212,23 +1226,3 @@
   border-top-color: #3FC7FA;
   color: #3FC7FA;
 }
-.sk-date-box {
-  display: flex;
-  margin: 0 0 10px;
-  font-size: 14px; }
-  .sk-date-box__label:focus, .sk-date-box__value:focus {
-    outline: 0; }
-  .sk-date-box__label {
-    color: #666;
-    font-weight: 300;
-    align-self: center; }
-  .sk-date-box__value {
-    line-height: 1;
-    background: #f4f4f4;
-    color: #666;
-    border-radius: 8px;
-    padding: 0.5em;
-    min-height: 2em; }
-
-.sk-calendar-picker {
-  z-index: 1; }

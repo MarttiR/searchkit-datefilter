@@ -3,7 +3,8 @@ export interface DateRangeQueryOptions {
   lte?:number | string
   gt?:number | string
   gte?:number | string
-  boost?:number
+  boost?:number,
+  relation: string,
   format?:string
   time_zone?:string
 }
