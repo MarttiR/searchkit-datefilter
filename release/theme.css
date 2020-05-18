@@ -1,4 +1,4 @@
-.sk-date-box{display:-webkit-box;display:flex;margin:0 0 10px;font-size:14px}.sk-date-box__label:focus,.sk-date-box__value:focus{outline:0}.sk-date-box__label{color:#666;font-weight:300;align-self:center}.sk-date-box__value{line-height:1;background:#f4f4f4;color:#666;border-radius:8px;padding:0.5em;min-height:2em}.sk-calendar-picker{z-index:1}
+.sk-date-box{display:flex;margin:0 0 10px;font-size:14px}.sk-date-box__label:focus,.sk-date-box__value:focus{outline:0}.sk-date-box__label{color:#666;font-weight:300;align-self:center}.sk-date-box__value{line-height:1;background:#f4f4f4;color:#666;border-radius:8px;padding:0.5em;min-height:2em}.sk-calendar-picker{z-index:1}
 .rc-calendar {
   box-sizing: border-box;
 }
@@ -94,7 +94,6 @@
   display: inline-block;
   line-height: 1;
   width: 20px;
-  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 .rc-calendar-clear-btn:hover:after {
@@ -114,8 +113,7 @@
           animation-duration: .3s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+  transform-origin: 0 0;
   display: block !important;
   opacity: 0;
   -webkit-animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
@@ -128,8 +126,7 @@
           animation-duration: .3s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+  transform-origin: 0 0;
   display: block !important;
   opacity: 0;
   -webkit-animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
@@ -142,8 +139,7 @@
           animation-duration: .3s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+  transform-origin: 0 0;
   display: block !important;
   opacity: 1;
   -webkit-animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
@@ -186,129 +182,97 @@
 @-webkit-keyframes rcDropdownSlideUpIn {
   0% {
     opacity: 0;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
   }
 }
 @keyframes rcDropdownSlideUpIn {
   0% {
     opacity: 0;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
   }
 }
 @-webkit-keyframes rcDropdownSlideUpOut {
   0% {
     opacity: 1;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
   }
   100% {
     opacity: 0;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
   }
 }
 @keyframes rcDropdownSlideUpOut {
   0% {
     opacity: 1;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
   }
   100% {
     opacity: 0;
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
   }
 }
 @-webkit-keyframes rcDropdownSlideDownIn {
   0% {
     opacity: 0;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transform: scaleY(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
   }
 }
 @keyframes rcDropdownSlideDownIn {
   0% {
     opacity: 0;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transform: scaleY(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
   }
 }
 @-webkit-keyframes rcDropdownSlideDownOut {
   0% {
     opacity: 1;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
   }
   100% {
     opacity: 0;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transform: scaleY(0);
   }
 }
 @keyframes rcDropdownSlideDownOut {
   0% {
     opacity: 1;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform-origin: 100% 100%;
+    transform: scaleY(1);
   }
   100% {
     opacity: 0;
-    -webkit-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transform: scaleY(0);
   }
 }
 .rc-calendar {
@@ -591,8 +555,7 @@
   background-color: #ffffff;
   color: #666;
   line-height: 1.5;
-  -webkit-transform: border 0.3s cubic-bezier(0.35, 0, 0.25, 1), background 0.3s cubic-bezier(0.35, 0, 0.25, 1), box-shadow 0.3s cubic-bezier(0.35, 0, 0.25, 1);
-          transform: border 0.3s cubic-bezier(0.35, 0, 0.25, 1), background 0.3s cubic-bezier(0.35, 0, 0.25, 1), box-shadow 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transform: border 0.3s cubic-bezier(0.35, 0, 0.25, 1), background 0.3s cubic-bezier(0.35, 0, 0.25, 1), box-shadow 0.3s cubic-bezier(0.35, 0, 0.25, 1);
   width: 40px;
 }
 .rc-calendar-time-input:hover {
@@ -679,11 +642,8 @@
 }
 .rc-calendar-month-panel > div {
   height: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
 }
 .rc-calendar-month-panel-hidden {
   display: none;
@@ -743,8 +703,7 @@
   right: 0;
 }
 .rc-calendar-month-panel-body {
-  -webkit-box-flex: 1;
-          flex: 1;
+  flex: 1;
   padding: 9px 10px 10px;
 }
 .rc-calendar-month-panel-footer {
@@ -807,11 +766,8 @@
 }
 .rc-calendar-year-panel > div {
   height: 100%;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
 }
 .rc-calendar-year-panel-hidden {
   display: none;
@@ -871,8 +827,7 @@
   right: 0;
 }
 .rc-calendar-year-panel-body {
-  -webkit-box-flex: 1;
-          flex: 1;
+  flex: 1;
   padding: 9px 10px 10px;
 }
 .rc-calendar-year-panel-footer {
@@ -929,11 +884,8 @@
   z-index: 10;
   position: absolute;
   outline: none;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
 }
 .rc-calendar-decade-panel-hidden {
   display: none;
@@ -987,8 +939,7 @@
   right: 0;
 }
 .rc-calendar-decade-panel-body {
-  -webkit-box-flex: 1;
-          flex: 1;
+  flex: 1;
   padding: 9px 10px 10px;
 }
 .rc-calendar-decade-panel-footer {
