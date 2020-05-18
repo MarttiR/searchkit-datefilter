@@ -44,7 +44,7 @@
     "moment": "^2.22.2",
     "rc-calendar": "^9.13.4",
     "react": "^16.4.2",
-    "searchkit": "git+https://github.com/vtr-voyages/searchkit.git#staging"
+    "searchkit": "2.3.0-3"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0-0",
