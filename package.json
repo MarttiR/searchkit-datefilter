@@ -66,7 +66,7 @@
     "js-beautify": "^1.5.10",
     "json-loader": "^0.5.4",
     "method-override": "^2.3.9",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.13.1",
     "null-loader": "^0.1.1",
     "postcss-loader": "^0.8.2",
     "react-addons-test-utils": "^15.4.0",
