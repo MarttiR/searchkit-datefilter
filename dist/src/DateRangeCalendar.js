@@ -15,14 +15,16 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var moment = require("moment");
+require('moment/locale/fr')
 var styles = require("rc-calendar/assets/index.css");
 var searchkit_1 = require("searchkit");
 var RcCalendar = require("rc-calendar");
 var RangeCalendar = require('rc-calendar/lib/RangeCalendar');
-var enUS = require('rc-calendar').enUS;
+var fr_FR = require('rc-calendar/lib/locale/fr_FR');
+
 var DatePicker = require('rc-calendar/lib/Picker');
 var format = 'dddd D. MMMM YYYY';
-var fullFormat = 'ddd D.M.Y';
+var fullFormat = 'ddd DD.MM.Y';
 var Picker = /** @class */ (function (_super) {
     __extends(Picker, _super);
     function Picker() {
@@ -32,7 +34,7 @@ var Picker = /** @class */ (function (_super) {
         var _this = this;
         var props = this.props;
         var showValue = props.showValue;
-        var calendar = (React.createElement(RangeCalendar, { type: this.props.type, locale: enUS, format: format, onChange: props.onChange, disabledDate: props.disabledDate, showToday: false, showOk: false, showClear: false }));
+        var calendar = (React.createElement(RangeCalendar, { type: this.props.type, locale: fr_FR, format: format, onChange: props.onChange, disabledDate: props.disabledDate, showToday: false, showOk: false, showClear: false }));
         return (React.createElement(DatePicker, { prefixCls: "sk-calendar-picker", open: this.props.open, onOpenChange: this.props.onOpenChange, calendar: calendar, value: props.value, dateFormat: format, align: {
                 points: ['bl', 'tl']
             } }, function () { return (React.createElement("div", { className: "sk-date-box" },
