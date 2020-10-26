@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import * as React from "react";
 import * as moment from "moment";
 import { SearchkitComponent, SearchkitComponentProps, RenderComponentType, FieldOptions, Panel } from "searchkit";
@@ -42,7 +41,7 @@ export declare class DateRangeFilter extends SearchkitComponent<DateRangeFilterP
     setCalendarState: (newValues: any) => void;
     calendarUpdate: (newValues: any) => void;
     calendarUpdateAndSearch: (newValues: any) => void;
-    getCalendarComponent(): RenderComponentType<any>;
-    render(): React.ReactElement<any>;
-    renderCalendarComponent(component: RenderComponentType<any>): React.ReactElement<any>;
+    getCalendarComponent(): any;
+    render(): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)>) | (new (props: any) => React.Component<any, any, any>)>;
+    renderCalendarComponent(component: RenderComponentType<any>): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)>) | (new (props: any) => React.Component<any, any, any>)>;
 }

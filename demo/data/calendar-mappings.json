@@ -3,33 +3,28 @@
     "event": {
       "properties": {
         "district": {
-          "type": "string",
-          "analyzer": "keyword"
+          "type": "keyword"
         },
         "event_types": {
-          "type": "string",
-          "analyzer": "keyword"
+          "type": "keyword"
         },
         "keywords": {
-          "type": "string",
-          "analyzer": "keyword"
+          "type": "keyword"
         },
         "hobby_details": {
-          "type": "string",
-          "analyzer": "keyword"
+          "type": "keyword"
         },
         "hobby_category": {
           "type": "nested",
           "properties": {
             "ancestors": {
-              "type": "string"
+              "type": "text"
             },
             "level": {
               "type": "long"
             },
             "value": {
-             "type": "string",
-              "analyzer": "keyword"
+              "type": "keyword"
             }
           }
         }
@@ -37,4 +32,3 @@
     }
   }
 }
-

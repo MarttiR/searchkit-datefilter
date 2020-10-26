@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool:"eval",
+  mode: 'development',
   entry: {
     app: [
       'webpack-hot-middleware/client?reload=true',
@@ -17,28 +17,25 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
-    extensions:["", ".js", ".ts", ".tsx", ".webpack.js", ".web.js"],
-    fallback: path.join(__dirname, "node_modules")
+    extensions:[".js", ".ts", ".tsx", ".webpack.js", ".web.js"]
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.tsx?$/,
-        loaders: ['ts']
+        use: ['ts-loader']
       },
       {
         test: /\.(scss|css)$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.(jpg|png|svg)$/,
-        loaders: [
-            'file-loader?name=[name].[ext]'
-        ]
+        use: [ 'file-loader?name=[name].[ext]' ]
       }
     ]
   }

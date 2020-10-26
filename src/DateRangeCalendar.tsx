@@ -4,16 +4,18 @@ const styles = require("rc-calendar/assets/index.css");
 
 import {
   SearchkitComponent,
-  SearchkitComponentProps
 } from "searchkit"
 
-const RcCalendar = require("rc-calendar")
 const RangeCalendar = require('rc-calendar/lib/RangeCalendar');
-const enUS = require('rc-calendar').enUS;
+
 const DatePicker = require('rc-calendar/lib/Picker');
+var fr_FR = require('rc-calendar/lib/locale/fr_FR');
 
 const format = 'dddd D. MMMM YYYY';
-const fullFormat = 'ddd D.M.Y';
+const fullFormat = 'dddd DD.MM.Y';
+
+const locale = { ...fr_FR, monthFormat: 'MMMM' }
+import 'moment/locale/fr';
 
 export class Picker extends SearchkitComponent<any, any> {
   render() {
@@ -22,11 +24,11 @@ export class Picker extends SearchkitComponent<any, any> {
     const calendar = (
       <RangeCalendar
         type={this.props.type}
-        locale={enUS}
+        locale={locale}
         format={format}
         onChange={props.onChange}
         disabledDate={props.disabledDate}
-        showToday={true}
+        showToday={false}
         showOk={false}
         showClear={false}
       />);
@@ -50,7 +52,7 @@ export class Picker extends SearchkitComponent<any, any> {
                 {this.props.dateInputPlaceholder}:
               </div>
               <div className="sk-date-box__value" style={{flex:"1 0 50%"}}>
-                {showValue && moment(showValue).format(fullFormat)}
+                {moment(showValue).format(fullFormat)}
               </div>
             </div>
           )
@@ -142,8 +144,8 @@ export class DateRangeCalendar extends SearchkitComponent<any, any> {
     const state = this.state;
     const { fromDate, toDate, fromDateValue, toDateValue } = this.props
 
-    const fromLabel = "From";
-    const toLabel = "To";
+    const fromLabel = this.props.formLabel || "Form"
+    const toLabel = this.props.toLabel || "To";
 
     return (
       <div>
@@ -170,4 +172,3 @@ export class DateRangeCalendar extends SearchkitComponent<any, any> {
     )
   }
 }
-
